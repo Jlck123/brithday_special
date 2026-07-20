@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+<link rel="stylesheet" href="style.css">
+<script src="js.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+  
+<img src="https://media.tenor.com/7kEjcxcgkgEAAAA1/peach-goma-peach.webp" width="250" alt="Peach and Goma">
+<img src="https://media.tenor.com/64-4Ck4pIkEAAAA1/peach-and-goma-peach.webp" width="250" alt="Peach and Goma" border-radius="50%">
+<br><br><br>  
+<button class="love-btn" id="loveBtn">❤️ I knew it</button>
+<h1>Thanks for being my special friend ❤️</h1>
+
+</div>
+
+
+
+<!-- Floating Hearts -->
+<div id="hearts"></div>
+
+<!-- Romantic Click Sound -->
+<audio id="music" loop preload="auto">
+  <source src="myp\Dooron Dooron.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+(function () {
+  const audio = document.getElementById('music');
+  const savedTime = localStorage.getItem('sharedAudioTime');
+
+  if (savedTime) {
+    audio.currentTime = parseFloat(savedTime);
+  }
+
+  const playFromSavedTime = () => {
+    audio.play().catch(() => {});
+  };
+
+  playFromSavedTime();
+
+  setInterval(() => {
+    localStorage.setItem('sharedAudioTime', audio.currentTime);
+  }, 500);
+})();
+</script>
+</body>
+</html>
